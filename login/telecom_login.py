@@ -13,7 +13,7 @@ from xml.etree.ElementTree import XML
 from uuid import uuid4
 from sys import path
 if "telecom_login" in __file__:
-    path.append("./tools")
+    path.append("../tools")
     from rsa_encrypt import RSA_Encrypt
     from encrypt_symmetric import Crypt
     from tool import print_now
@@ -132,9 +132,3 @@ class TelecomLogin:
                 else:
                     print("转化失败 大概率是明文输入错误")
         return bArr
-
-if __name__ == "__main__":
-    phone = "测试号码"
-    password = "测试密码"
-    a=TelecomLogin(phone,password)
-    a.login()

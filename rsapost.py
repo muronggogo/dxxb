@@ -1,18 +1,12 @@
 #!/usr/bin/python3
 # -- coding: utf-8 --
 # -------------------------------
-# @Author : github@limoruirui https://github.com/limoruirui
-# @Time : 2022/9/12 16:10
-# cron "1 9,12 * * *" script-path=xxx.py,tag=匹配cron用
-# const $ = new Env('电信签到');
-# -------------------------------
 
 from requests import get, post
 
 class RsaPost:
     def __init__(self):
         self.key=""
-
 
     def init(self):
         self.msg = ""
@@ -46,8 +40,6 @@ class RsaPost:
         else:
             print("您当前使用的请求方式有误,请检查")
 
-                            
-
     # 获取任务列表
     def get_Auth(self,message):
         url = f"http://yun.tustbpf.top:8811/?codeToken={message}"
@@ -55,17 +47,11 @@ class RsaPost:
         if(msg['code']==0):
             data=msg['auth']
         return data
-        #print(msg)
-
-
 
     def main(self):
         self.init()
         self.get_Auth('21223')
         
-        
-
-
 if __name__ == "__main__":
     rsa=RsaPost()
     rsa.main()
